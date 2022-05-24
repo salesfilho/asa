@@ -7,6 +7,6 @@ Projeto para a Disciplina de ASA
 
 `cd artichoke-chat`
 
-`docker build -t webchat:latest -f Dockerfile.webchat` .
+`docker build -t webchat:latest -f Dockerfile.chat` .
 
 `docker run webchat:latest`
