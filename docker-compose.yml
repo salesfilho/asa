@@ -1,0 +1,52 @@
+version: '3'
+services:
+
+  web01:
+    build:
+      context: ./web
+      dockerfile: Dockerfile
+    image: web01
+    container_name: web01
+    #command: ./run.sh
+    restart: always
+    tty: true
+    #ports:
+    #  - "80:80"
+    networks:
+      - asa-network
+
+  web02:
+    build:
+      context: ./web
+      dockerfile: Dockerfile.web2
+    image: web02
+    container_name: web02
+    restart: always
+    tty: true
+    ports:
+      - "8080:80"
+    networks:
+      - asa-network
+      
+  proxy:
+    build:
+      context: ./web
+      dockerfile: Dockerfile.proxy
+    image: proxy
+    container_name: proxy
+    restart: always
+    tty: true
+    ports:
+      - "80:80"
+    depends_on:
+      - web01
+      - web02
+    networks:
+      - asa-network
+
+
+#Docker Networks
+networks:
+  asa-network:
+    driver: bridge
+
