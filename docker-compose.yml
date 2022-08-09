@@ -7,11 +7,8 @@ services:
       dockerfile: Dockerfile
     image: web01
     container_name: web01
-    #command: ./run.sh
     restart: always
     tty: true
-    #ports:
-    #  - "80:80"
     networks:
       - asa-network
 
@@ -23,8 +20,6 @@ services:
     container_name: web02
     restart: always
     tty: true
-    ports:
-      - "8080:80"
     networks:
       - asa-network
       
