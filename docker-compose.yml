@@ -53,6 +53,20 @@ services:
     networks:
       - asa-network
  
+  mail:
+    build:
+      context: ./email
+      dockerfile: Dockerfile
+    image: email
+    container_name: email
+    restart: always
+    tty: true
+    ports:
+      - "25:25/tcp"
+      - "587:587/tcp"
+    networks:
+      - asa-network
+
 #Docker Networks
 networks:
   asa-network:
