@@ -52,6 +52,8 @@ services:
     ports:
       - "53:53/tcp"
       - "53:53/udp"
+    volumes:
+      - ./dns/etc:/etc/bind
     networks:
       - asa-network
  
