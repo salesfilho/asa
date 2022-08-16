@@ -15,7 +15,7 @@ $TTL	604800
 @	IN	A	127.0.0.1
 @	IN	AAAA	::1
 
-ns1			A	10.24.7.123
-mail		A 	10.24.7.123
+ns1			A	10.24.8.195
+mail		A 	10.24.8.195
 www			CNAME	ns1
 

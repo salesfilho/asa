@@ -29,6 +29,7 @@ services:
       dockerfile: Dockerfile.proxy
     image: proxy
     container_name: proxy
+    hostname: www.asa.br
     restart: always
     tty: true
     ports:
@@ -45,6 +46,7 @@ services:
       dockerfile: Dockerfile
     image: dns
     container_name: dns
+    hostname: ns1.asa.br
     restart: always
     tty: true
     ports:
@@ -59,6 +61,7 @@ services:
       dockerfile: Dockerfile
     image: email
     container_name: email
+    hostname: mail.asa.br
     restart: always
     tty: true
     ports:
