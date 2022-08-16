@@ -22,17 +22,17 @@ Este repositório tem como principal objetivo ajudar os alunos no aprendizado de
 ## Atvividade 02 - ETAPA 02
 ### O QUE FAZER?
 1. Implementar serviços básicos usando docker e docker-compose:
-1.1. Servidor de DNS
-1.2. Servidor Web HTTP (Proxy Reverso)
-1.3. Servidor Web HTTP (Portal/Página principal)
-1.4. Servidor Web HTTP (Webmail)
-1.5. Servidor de email (IMAP+SMTP)
+- Servidor de DNS
+- Servidor Web HTTP (Proxy Reverso)
+- Servidor Web HTTP (Portal/Página principal)
+- Servidor Web HTTP (Webmail)
+- Servidor de email (IMAP+SMTP)
 
 2. Requisitos mínimos
-2.1. Construir imagens personalizadas
-2.2  Criar zonas de DNS no formato dos estados da federação (Ex.: rn.asa.br)
-2.3  Usa em pelo menos um serviço o recurso de mapeamento de volumes
-2.4  Todos os arquivos e as informações necessárias à execução da infraestrutura deve estar no repositório (github)
+- Construir imagens personalizadas
+- Criar zonas de DNS no formato dos estados da federação (Ex.: rn.asa.br)
+- Usa em pelo menos um serviço o recurso de mapeamento de volumes
+- Todos os arquivos e as informações necessárias à execução da infraestrutura deve estar no repositório (github)
 
 3. APRESENTAÇÃO
 - Dever ser elaborada uma apresentação de 5 slides para ser apresentada em 05 minutos na sala de aula
