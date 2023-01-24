@@ -11,11 +11,8 @@ $TTL	604800
 ;
 @	IN  MX 10 mail.asa.br.
 @	IN	NS	ns1.asa.br.
-;@	IN	NS	ns2.asa.br.
-@	IN	A	127.0.0.1
-@	IN	AAAA	::1
 
-ns1			A	10.24.8.195
-mail		A 	10.24.8.195
+ns1			A	10.24.6.114
+mail		A 	10.24.6.114
 www			CNAME	ns1
 

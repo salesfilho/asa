@@ -1,0 +1,27 @@
+version: '3'
+services:
+  web01:
+    image: nginx
+    container_name: web01
+    restart: always
+    tty: true
+    ports:
+      - "8080:80"
+    networks:
+      - asa-network
+
+  web02:
+    image: nginx
+    container_name: web02
+    restart: always
+    tty: true
+    ports:
+      - "8081:80"
+    networks:
+      - asa-network
+
+#Docker Networks
+networks:
+  asa-network:
+    driver: bridge
+
