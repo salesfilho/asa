@@ -24,6 +24,7 @@ services:
       - asa-network
     depends_on:
       - portal
+      - nextcloud
 
   email:
     build:
@@ -74,6 +75,40 @@ services:
     volumes:
       - db:/var/lib/mysql
 
+  nextcloud:
+    image: nextcloud
+    container_name: nextcloud
+    restart: always
+    #ports:
+    #  - 8080:80
+    links:
+      - db_nextcloud
+    volumes:
+      - nextcloud:/var/www/html
+    environment:
+      - MYSQL_PASSWORD=nextcloud-p@ss
+      - MYSQL_DATABASE=nextcloud
+      - MYSQL_USER=nextcloud
+      - MYSQL_HOST=db_nextcloud
+    networks:
+      - asa-network
+
+  db_nextcloud:
+    image: mariadb:10.6
+    container_name: db_nextcloud
+    restart: always
+    command: --transaction-isolation=READ-COMMITTED --log-bin=binlog --binlog-format=ROW
+    volumes:
+      - db_nextcloud:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=nextcloud-p@ss
+      - MYSQL_PASSWORD=nextcloud-p@ss
+      - MYSQL_DATABASE=nextcloud
+      - MYSQL_USER=nextcloud
+    networks:
+      - asa-network
+
+
 #Docker Networks
 networks:
   asa-network:
@@ -82,3 +117,5 @@ networks:
 volumes:
   wordpress:
   db:
+  db_nextcloud:
+  nextcloud:

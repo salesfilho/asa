@@ -3,7 +3,7 @@
 ;
 $TTL	604800
 @	IN	SOA	asa.br. root.asa.br. (
-			      2		; Serial
+			      3		; Serial
 			 604800		; Refresh
 			  86400		; Retry
 			2419200		; Expire
@@ -15,4 +15,5 @@ $TTL	604800
 ns1			A	10.25.2.30
 mail		A 	10.25.2.30
 www			CNAME	ns1
-portal			CNAME	ns1
+portal		CNAME	ns1
+nextcloud	CNAME	ns1
